@@ -20,7 +20,8 @@ class BarChart:
                          'x': self.series_hspace * (i + 0.5),
                          'y': height * 0.95
                          } for i, v in enumerate([d[0] for d in data])]
-        self.colours = ["red", "green", "blue", "yellow"]
+        self.colours = ["red", "orangered", "orange", "yellow", "limegreen",
+                        "green", "cyan", "blue", "purple", "magenta"]
         self.bars = [
                      [{
                        'x': i * self.series_hspace + self.series_pad + j * self.bar_hspace + self.bar_pad,

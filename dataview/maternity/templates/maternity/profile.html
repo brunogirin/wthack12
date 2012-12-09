@@ -1,0 +1,27 @@
+{% extends "maternity/base.html" %}
+{% load url from future %}
+
+{% block page_title %}Baby Stats{% endblock %}
+
+{% block content %}
+<div id="narrative">
+    <h2>Gestation Term Profile by Authority</h2>
+    {% if keys %}
+    <dl>
+    {% for k in keys %}
+    <dt>{{ k.key }}</dt>
+    <dd>{{ k.name }}</dd>
+    {% endfor %}
+    </dl>
+    {% endif %}
+</div>
+{% if chart %}
+<div id="chart">
+{% include "maternity/chart.html" %}
+</div>
+{% else %}
+<p>
+No data.
+</p>
+{% endif %}
+{% endblock %}

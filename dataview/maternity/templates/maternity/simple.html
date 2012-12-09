@@ -6,6 +6,7 @@
 {% block content %}
 <div id="narrative">
     <h2>Charts by Authority</h2>
+    <p>
     <form action="/maternity/simple/" method="post">
 	{% csrf_token %}
 	   <label for="field">Field: </label>
@@ -20,6 +21,8 @@
 	   </select>
 	   <input type="submit" value="Submit" />
 	</form>
+	</p>
+	<a href="/maternity/profile/">Profile charts</a>
     {% if keys %}
     <dl>
     {% for k in keys %}

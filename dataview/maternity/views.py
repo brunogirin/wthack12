@@ -39,10 +39,6 @@ def simple(request):
                      'key': key,
                      'name': name
                      })
-    #data = [
-    #        (r[1]['name'], [
-    #                     (k, get_field(v, field)) for k, v in r[1]['statistics']
-    #                     ]) for r in results]
     context = {
                'chart': BarChart(600, 400, sorted(data)),
                'keys': sorted(keys),
@@ -55,7 +51,36 @@ def simple(request):
                           ]
                }
     return render(request, 'maternity/simple.html', context)
-    
+
+def profile(request):
+    if 'field' in request.GET:
+        field = request.GET['field']
+    elif 'field' in request.POST:
+        field = request.POST['field']
+    else:
+        field = 'gestationTerm'
+    service = MaternityService()
+    results = service.get_authorities()
+    keys = []
+    data = []
+    for r in results:
+        key = r[1]['code']
+        name = r[1]['name']
+        series = []
+        rawseries = get_field(r[1]['statistics']['11-12'], field)
+        for k, v in rawseries.iteritems():
+            series.append((k, v))
+        data.append((key, sorted(series)))
+        keys.append({
+                     'key': key,
+                     'name': name
+                     })
+    context = {
+               'chart': BarChart(600, 400, sorted(data)),
+               'keys': sorted(keys)
+               }
+    return render(request, 'maternity/profile.html', context)
+        
 def get_field(data, field):
     r = data
     for f in field.split('.'):

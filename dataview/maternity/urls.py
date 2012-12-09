@@ -9,5 +9,6 @@ from maternity import views
 
 urlpatterns = patterns('',
     url(r'^$', views.index, name='index'),
-    url(r'^simple/$', views.simple, name='simple')
+    url(r'^simple/$', views.simple, name='simple'),
+    url(r'^profile/$', views.profile, name='profile'),
 )
