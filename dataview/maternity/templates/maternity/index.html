@@ -1,0 +1,22 @@
+{% extends "maternity/base.html" %}
+
+{% block page_title %}Baby Stats{% endblock %}
+
+{% block content %}
+{% if entity %}
+<p>
+Entity code: {{ entity.code }}, name: {{ entity.name }}.
+</p>
+<p>
+<dl>
+{% for year, stats in entity.statistics %}
+<dt>{{ year }}</dt>
+<dd>{{ stats.total }}</dd>
+{% endfor %}
+</dl>
+{% else %}
+<p>
+No entity.
+</p>
+{% endif %}
+{% endblock %}
