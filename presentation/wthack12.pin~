@@ -1,0 +1,33 @@
+#!/usr/bin/env pinpoint
+
+[black]
+[text-color=yellow]
+[font=Sans 50px]
+[text-align=center]
+
+--
+Baby Stats
+by Bruno Girin
+
+--
+HESonline data
+<u>http://www.hesonline.nhs.uk/</u>
+
+--
+Maternity data
+
+-- [Surprised_Kitten_Wallpaper_1600x1200_wallpaperhere.jpg] [bottom]
+Excel
+# http://www.wallpaperhere.com/Surprised_Kitten_48428/download_1600x1200
+
+--
+Apache POI
+Java library
+
+-- [Riak-JSON-example.png] [right] [text-color=blue] [shading-opacity=0.0] [text-align=right]
+Riak database
+NoSQL
+key/value pairs
+JSON
+map/reduce
+
