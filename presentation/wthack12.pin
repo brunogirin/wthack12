@@ -1,40 +1,42 @@
 #!/usr/bin/env pinpoint
 
 [black]
-[text-color=yellow]
-[font=Sans 50px]
 [text-align=center]
-
---
+[font=Sans 50px]
+[text-color=yellow]
+-- [duration=4.184051]
 Baby Stats
 by Bruno Girin
 
---
+-- [duration=12.153000]
 HESonline data
 <u>http://www.hesonline.nhs.uk/</u>
 
---
+-- [duration=15.544266]
 Maternity data
 
--- [Surprised_Kitten_Wallpaper_1600x1200_wallpaperhere.jpg] [bottom]
+-- [Surprised_Kitten_Wallpaper_1600x1200_wallpaperhere.jpg] [bottom] [duration=7.283216]
 Excel
 # http://www.wallpaperhere.com/Surprised_Kitten_48428/download_1600x1200
 
---
+-- [duration=6.441676]
 Apache POI
 Java library
 
--- [Riak-JSON-example.png] [right] [text-color=blue] [shading-opacity=0.0] [text-align=right]
+-- [Riak-JSON-example.png] [text-align=right] [right] [text-color=blue] [shading-opacity=0.000000] [duration=10.613164]
 Riak database
 NoSQL
-key/value pairs
+key/value store
 JSON
 map/reduce
+cluster
 
---
+-- [duration=35.467529]
 Demo
 
 --
-Next
-map/reduce
+Tip of the Iceberg
+
+--
+Questions?
 
