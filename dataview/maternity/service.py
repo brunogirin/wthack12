@@ -21,4 +21,26 @@ class MaternityService:
             return data
         else:
             return None
-        
+    
+    def get_authorities(self):
+        query = self.riak.add(settings.RIAK_MATERNITY_BUCKET)
+        query.map('''
+            function(v) {
+                var data = JSON.parse(v.values[0].data);
+                if(data.type == 'AUTHORITY') {
+                    return [[v.key, data]];
+                }
+                return [];
+            }
+        ''')
+        return query.run()
+        #data = []
+        #for result in query.run():
+        #    d = result[1]
+            #dj = json.loads(d)
+        #    data.append((result[0], d))
+        #return data
+        #return [
+        #        (result[0], json.loads(result[1]))
+        #        for result in query.run()
+        #        ]

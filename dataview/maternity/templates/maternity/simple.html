@@ -1,0 +1,41 @@
+{% extends "maternity/base.html" %}
+{% load url from future %}
+
+{% block page_title %}Baby Stats{% endblock %}
+
+{% block content %}
+<div id="narrative">
+    <h2>Charts by Authority</h2>
+    <form action="/maternity/simple/" method="post">
+	{% csrf_token %}
+	   <label for="field">Field: </label>
+	   <select id="field" name="field">
+	       {% for f in fields %}
+	       {% if f.value == selected %}
+	       <option value="{{ f.value }}" selected="selected">{{ f.text }}</option>
+	       {% else %}
+           <option value="{{ f.value }}">{{ f.text }}</option>
+	       {% endif %}
+	       {% endfor %}
+	   </select>
+	   <input type="submit" value="Submit" />
+	</form>
+    {% if keys %}
+    <dl>
+    {% for k in keys %}
+    <dt>{{ k.key }}</dt>
+    <dd>{{ k.name }}</dd>
+    {% endfor %}
+    </dl>
+    {% endif %}
+</div>
+{% if chart %}
+<div id="chart">
+{% include "maternity/chart.html" %}
+</div>
+{% else %}
+<p>
+No data.
+</p>
+{% endif %}
+{% endblock %}

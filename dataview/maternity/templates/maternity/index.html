@@ -3,20 +3,20 @@
 {% block page_title %}Baby Stats{% endblock %}
 
 {% block content %}
-{% if entity %}
-<p>
-Entity code: {{ entity.code }}, name: {{ entity.name }}.
-</p>
-<p>
-<dl>
-{% for year, stats in entity.statistics %}
-<dt>{{ year }}</dt>
-<dd>{{ stats.total }}</dd>
-{% endfor %}
-</dl>
+<div id="narrative">
+    <h2>England Maternity Data</h2>
+    <p>This application uses a data set of maternity statistics for England over
+        the past three years.
+    </p>
+    <a href="./simple/">Detailed charts</a>
+</div>
+{% if chart %}
+<div id="chart">
+{% include "maternity/chart.html" %}
+</div>
 {% else %}
 <p>
-No entity.
+No data.
 </p>
 {% endif %}
 {% endblock %}

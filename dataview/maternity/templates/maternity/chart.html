@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="{{ chart.height }}" width="{{ chart.width }}">
+    <g stroke="black" stroke-width="1">
+        <line x1="{{ chart.floorline.x1 }}" y1="{{ chart.floorline.y1 }}" x2="{{ chart.floorline.x2 }}" y2="{{ chart.floorline.y2 }}" />
+        {% for l in chart.legends %}
+        <text fill="black" x="{{ l.x }}" y="{{ l.y }}" style="text-anchor: middle;">
+            {{ l.legend }}
+        </text>
+        {% endfor %}
+        {% for bgroup in chart.bars %}
+        {% for b in bgroup %}
+        <g fill="{{ b.colour }}" stroke-width="0">
+	        <rect x="{{ b.x }}" y="{{ b.y }}" width="{{ b.width }}" height="{{ b.height }}" />
+        </g>
+        <text fill="black" x="{{ b.labelx }}" y="{{ b.labely }}" style="text-anchor: middle;">
+            {{ b.label }}
+        </text>
+        {% endfor %}
+        {% endfor %}
+    </g>
+</svg>
+
+<!-- 
+Width: {{ chart.width }}
+Height: {{ chart.height }}
+Legends: {{ chart.legends }}
+Bars: {{ chart.bars }}
+-->
