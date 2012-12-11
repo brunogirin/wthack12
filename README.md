@@ -17,7 +17,7 @@ the data. The file structure reflects this:
 * The `dataview` directory contains a [django](https://www.djangoproject.com/)
   application that uses the Riak data to product graphs.
 
-![Application screen shot](http://brunogirin.github.com/wthack12/screenshot.png)
+![Application screen shot](http://brunogirin.github.com/wthack12/images/screenshot.png)
 
 License
 -------
